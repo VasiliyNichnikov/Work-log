@@ -11,7 +11,6 @@ listUser = []
 
 @app.route("/")
 def Program():
-    print(listUser)
     return render_template("/work_log.html", title="Журнал работ", listUsers=listUser)
 
 
@@ -30,8 +29,6 @@ def main():
         dictUser["collaborators"] = i.collaborators
         dictUser["is_finished"] = i.is_finished
         listUser.append(dictUser)
-    print(listUser)
-
     app.run()
 
 
