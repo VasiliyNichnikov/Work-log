@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<center><h1>Works log</h1></center>
+{% for i in listUsers %}
+    <div class="container">
+        <h3>Action #{{ i["id"] }}</h3>
+        <div style="background-color: #808080" class="row">
+            <div class="col">
+                Title for activity
+            </div>
+            <div class="col">
+                Team leader
+            </div>
+            <div class="col">
+                Duration
+            </div>
+            <div class="col">
+                List of collaborators
+            </div>
+            <div class="col">
+                Is finished
+            </div>
+        </div>
+        <div style="background-color: #7f7679" class="row">
+            <div class="col">
+                {{ i["job"] }}
+            </div>
+            <div class="col">
+                {{ i["team_leader"] }}
+            </div>
+            <div class="col">
+                {{ i["work_size"] }} часов
+            </div>
+            <div class="col">
+                {{ i["collaborators"] }}
+            </div>
+            <div class="col">
+                {% if i["is_finished"] %}
+                    Work is finished
+                {% else %}
+                    The work is not finished
+                {% endif %}
+            </div>
+        </div>
+</div>
+{% endfor %}
+
+{% endblock %}
